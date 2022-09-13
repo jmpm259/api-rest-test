@@ -22,6 +22,14 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', [App\Http\Controllers\api\RegisterController::class, 'register']);
 Route::post('login', [App\Http\Controllers\api\RegisterController::class, 'login']);
 
+Route::get('/', function () {
+    $token = [
+        'success' => true,
+        'message' => "Acceso Success API",
+    ];
+    return response()->json($token, 200);
+});
+
 /*
 Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
